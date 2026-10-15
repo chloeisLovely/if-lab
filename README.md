@@ -57,11 +57,12 @@ npm run build
 ## 저장소와 웹사이트
 
 - 소스 저장소: https://github.com/chloeisLovely/if-lab
-- 웹사이트: https://if-lab-human-potential.glassyharp3.chatgpt.site/
-- 현재 웹사이트는 소유자 전용 검토용입니다. GitHub 저장소의 코드 변경이 자동으로 이 사이트에 배포되지는 않습니다.
+- 공개 웹사이트: https://chloeislovely.github.io/if-lab/
+- `main` 브랜치의 변경은 GitHub Actions 검사 후 GitHub Pages에 자동 배포됩니다.
+- 기존 ChatGPT Sites 주소는 별도의 소유자 전용 검토용이며 GitHub 자동 배포 대상이 아닙니다.
 
 ## 배포와 검증
 
-현재 검토용 사이트는 본인 전용입니다. 공개 검색을 방지하는 `noindex` 및 `robots.txt`가 포함됩니다. 공개 배포로 변경할 때 `DEPLOY.md`를 따릅니다. 이 저장소는 사이트 소스 보관용입니다. Cloudflare 계정 연결과 자동 배포는 구성하지 않았습니다.
+GitHub Pages는 공개 웹사이트입니다. 배포 워크플로는 원본 `dist/`를 `_site/`로 복사하고 공개 주소와 검색 메타데이터를 적용합니다. `dist/`의 검토용 설정은 유지됩니다. 배포 방법과 재실행 절차는 `DEPLOY.md`를 참고하세요.
 
 `QA_REPORT.md`에 실제 검사 범위와 브라우저 검증 제한을 기록합니다. 테스트를 통과했다고 모바일 화면을 실제 확인한 것으로 해석하면 안 됩니다.
