@@ -1,0 +1,14 @@
+name: Static website integrity
+on:
+  push:
+  pull_request:
+jobs:
+  site-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify pages, links and resource files
+        run: python scripts/verify_static.py
