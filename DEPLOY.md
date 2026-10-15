@@ -35,3 +35,17 @@ Cloudflare 관리 화면의 실제 항목은 계정 화면을 기준으로 설�
 - 필요할 때만 문의 접수 API와 운영자 전용 관리 화면 구축
 - 접수 기능을 추가하면 개인정보 항목·이용 목적·보관 및 삭제 기준과 스팸 방지 설계
 - 유료 자료는 실제 콘텐츠·결제·환불·이용 조건이 준비된 뒤 별도 공개
+
+
+## GitHub Pages 자동 배포
+
+사용자의 2026-10-15 요청에 따라 GitHub Pages용 자동 배포 워크플로를 추가합니다.
+
+- `.github/workflows/deploy-pages.yml`: `main` 변경 시 검증·배포, PR에서는 검증만 수행
+- `scripts/prepare_pages.py`: `dist/`를 `_site/`로 복사하고 GitHub Pages 주소·OG·사이트맵·robots·404 경로를 맞춤
+- 배포 주소: `https://chloeislovely.github.io/if-lab/` (실제 배포 성공 후 사용 가능)
+- 저장소 Settings → Pages → Source를 `GitHub Actions`로 설정해야 합니다.
+- 비공개 저장소의 Pages 사용이 현재 플랜에서 제한되는 경우 저장소 공개 전환 또는 지원 플랜이 필요합니다. 자동으로 공개 전환하거나 유료 플랜을 구매하지 않습니다.
+- `main`으로 병합되면 자동 실행됩니다. 설정 복구 후 재배포는 Actions → Deploy IF LAB to GitHub Pages → Run workflow로 실행합니다.
+- GitHub Pages용 `_site/`에는 웹 파일과 다운로드 자료만 포함되며 루트 운영 문서·스크립트는 포함되지 않습니다.
+- 기존 본인 전용 사이트의 소스와 접근 설정은 이 워크플로가 변경하지 않습니다.
