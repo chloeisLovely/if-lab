@@ -4,3 +4,6 @@ node_modules/
 *.tar.gz
 .env*
 !example.env
+
+_site/
+__pycache__/
